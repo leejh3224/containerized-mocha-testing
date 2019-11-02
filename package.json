@@ -6,11 +6,11 @@
   "scripts": {
     "start": "nodemon src",
     "test": "mocha-parallel-tests ./test/**/index.test.js --exit",
-    "test:docker": "docker-compose -f docker-compose.test.yaml run app"
+    "test:docker": "docker-compose -f docker-compose.test.yaml run"
   },
   "husky": {
     "hooks": {
-      "pre-push": "npm run test:docker"
+      "pre-push": "npm run test:docker app"
     }
   },
   "keywords": [],
