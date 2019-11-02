@@ -1,0 +1,28 @@
+version: "3.7"
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.test
+    depends_on: 
+      - db
+    volumes:
+      - ./:/usr/src/app
+      - ./node_modules:/usr/src/app/node_modules
+    environment:
+      - MYSQL_HOST=mysql
+      - MYSQL_USER=root
+      - MYSQL_DB=test
+      - MYSQL_PASSWORD=root
+      - NODE_ENV=test
+    command: npm test
+  db:
+    image: mysql:5.6
+    container_name: mysql
+    environment:
+      - MYSQL_DATABASE=test
+      - MYSQL_USER=root
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_PASSWORD=root
+    ports:
+      - '3306:3306'

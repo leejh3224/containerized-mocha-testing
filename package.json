@@ -1,0 +1,31 @@
+{
+  "name": "docktest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon src",
+    "test": "mocha-parallel-tests ./test/**/index.test.js --exit",
+    "test:docker": "docker-compose -f docker-compose.test.yaml run app"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm test"
+    }
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mysql2": "^2.0.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "husky": "^3.0.9",
+    "mocha": "^6.2.2",
+    "mocha-parallel-tests": "^2.2.2",
+    "nodemon": "^1.19.4",
+    "supertest": "^4.0.2"
+  }
+}
