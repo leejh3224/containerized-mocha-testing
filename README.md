@@ -1,10 +1,10 @@
 # Containerized Moch Testing
 
-There are several things you can do for integration testing in Node.js
+There are several options you can choose regarding database for integration test in Node.js
 
 Firstly, you can use in memory databases such as `SQLite`.
 
-It's fast and doesn't require long running teardownm, however, there are subtle differences in syntax with other databases.
+It's fast and doesn't require long running teardown, however, there are subtle differences in syntax with other SQL databases.
 
 For example, you can't query by time, hour and second in `SQLite` like we can do with `MySQL`.
 
@@ -16,9 +16,9 @@ It ensures there's no disparity between test and production environment.
 
 But it can be difficult to setup local test environment especially when you're in a big team.
 
-Docker container comes to the rescue. It reduces the time and effort to setup identical environment among machines.
+Docker container comes to the rescue! It reduces the time and effort to setup an identical environment among many machines.
 
-Another advantage of using it is you can run tests in parallel easily.
+Another advantage of using it is you can also run tests in parallel easily.
 
 You can do something like this.
 
